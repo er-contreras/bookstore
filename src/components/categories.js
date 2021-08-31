@@ -1,10 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; // eslint-disable-line
 
-const Categories = (props) => {
+const Categories = (props) => // eslint-disable-line
   // const categories = props.categories;
   // console.log(categories)
-  return (
+  ( // eslint-disable-line
     <div>
       <h1>Under Construction!</h1>
       {/* {categories.map((categorie) => {
@@ -16,8 +16,7 @@ const Categories = (props) => {
           )
         })} */}
     </div>
-  )
-}
+  );
 
 // const mapStateToProps = (state) => {
 //   return {
