@@ -1,12 +1,26 @@
 import './App.css';
+import React from 'react';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import Books from '../src/redux/books/Books';
+import Categories from '../src/redux/categories/Categories';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Bookstore</h1>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Router>
+        <Switch>
+          <Route exact path="/books">
+            <Books />
+          </Route>
+
+          <Route path="/categories">
+            <Categories />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
