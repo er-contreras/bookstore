@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux'; // eslint-disable-line
+import logger from 'redux-logger';
 
 const initialState = {
   books: [
@@ -10,6 +11,9 @@ const initialState = {
 
 const reducer = (state = initialState, action) => state; // eslint-disable-line
 
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  applyMiddleware(logger),
+);
 
 export default store;

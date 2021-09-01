@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useState, useEffect} from 'react'; // eslint-disable-line
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Books from './components/books';
-import Categories from './components/categories';
-import Navbar from './components/Navbar';
+import Books from './books';
+import Categories from './categories';
+import Navbar from './Navbar';
 
 function App() {
   return (
