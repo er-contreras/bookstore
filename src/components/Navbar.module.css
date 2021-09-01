@@ -1,0 +1,23 @@
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+ul li {
+  margin: 0 1rem;
+  font-size: 1.2rem;
+}
+
+#title {
+  font-size: 3vw;
+}
+
+.activelink {
+  color: orangered;
+  text-decoration: underline;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
