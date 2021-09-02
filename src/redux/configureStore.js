@@ -1,14 +1,20 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
+import {
+  createStore, combineReducers, compose, applyMiddleware,
+} from 'redux';
+import thunk from 'redux-thunk';
+// import logger from 'redux-logger';
 import booksReducer from './books/books';
 
-const reducer = combineReducers({
-  booksReducer,
+const rootReducer = combineReducers({
+  books: booksReducer,
 });
 
-const store = createStore(
-  reducer,
-  applyMiddleware(logger),
-);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default store;
+export default function generateStore() {
+  const store = createStore(
+    rootReducer,
+    composeEnhancers(applyMiddleware(thunk)),
+  );
+  return store;
+}
