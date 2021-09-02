@@ -30,9 +30,9 @@ const reducer = (state = initialData, action) => {
 //   }
 // }
 
-export const addBook = () => ({
+export const addBook = (payload) => ({
   type: ADD_BOOK,
-  payload: null,
+  payload,
 });
 
 // export const removeBook = (payload) => ({
