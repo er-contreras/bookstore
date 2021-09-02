@@ -6,7 +6,7 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
-      path: '/books',
+      path: '/',
       text: 'BOOKS',
     },
     {
@@ -25,7 +25,10 @@ const Navbar = () => {
         {links.map((link) => (
           <li key={link.id}>
             <Router>
-              <NavLink to={link.path} activeClassName={styles.activelink}>
+              <NavLink
+                to={link.path}
+                activeClassName={styles.activelink}
+              >
                 {link.text}
               </NavLink>
             </Router>
