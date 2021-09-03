@@ -10,6 +10,7 @@ const initialData = [
 const reducer = (state = initialData, action) => {
   // If our case action.type is 'ADD_BOOK' it will return what it is inisde the curley braces
   // otherwise return another case.
+  // console.log(state[0].id, action);
   switch (action.type) {
     case ADD_BOOK:
       return [
@@ -17,7 +18,8 @@ const reducer = (state = initialData, action) => {
         action.payload,
       ];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.type.id);
+      // console.log('hola!', action.payload);
+      return state.filter((book) => book.id !== action.payload);
     default:
       return state;
   }

@@ -15,7 +15,7 @@ const Books = () => {
       {books.map((book) => (
         <ul key={book.id}>
           <>
-            {console.log(book.id)}
+            {/* {console.log(book.id)} */}
             <li>{book.title}</li>
             <input
               type="button"
