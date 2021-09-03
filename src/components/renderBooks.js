@@ -1,28 +1,28 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
-import { addBook, removeBook } from '../redux/books/books';
+import { addBook, removeBook } from '../redux/books/books'; // eslint-disable-line
 
 const Books = () => {
+  // Used to change the state or data in the store
   const dispatch = useDispatch();
 
+  // Used to save the store in a variable
   const books = useSelector((store) => store.books);
   // console.log(books[0].id);
 
   return (
     <div>
-      {/* {console.log(books)} */}
       {books.map((book) => (
-        <ul key={book.id}>
+        <ul key={book.item_id}>
           <>
-            {/* {console.log(book.id)} */}
             <li>{book.title}</li>
             <input
               type="button"
               name="remove"
               value="Remove"
               onClick={() => {
-                dispatch(removeBook(book.id));
+                dispatch(removeBook(book.item_id));
               }}
             />
           </>
@@ -49,9 +49,11 @@ const Books = () => {
             value="Add Book"
             onClick={() => {
               const bookName = document.getElementById('bookName');
+              const category = document.getElementById('category');
               const addPaper = {
-                id: uuidv4(),
+                item_id: uuidv4(),
                 title: bookName.value,
+                category: category.value,
               };
               dispatch(addBook(addPaper));
             }}
