@@ -1,18 +1,23 @@
 import './App.css';
-import React, { useState, useEffect} from 'react'; // eslint-disable-line
+import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Books from './components/books';
+import { Provider } from 'react-redux';
+import Books from './components/renderBooks';
 import Categories from './components/categories';
 import Navbar from './components/Navbar';
+import generateStore from './redux/configureStore';
 
 function App() {
+  const store = generateStore();
   return (
     <>
       <Navbar />
       <Router>
         <Switch>
-          <Route exact path="/books">
-            <Books />
+          <Route exact path="/">
+            <Provider store={store}>
+              <Books />
+            </Provider>
           </Route>
 
           <Route path="/categories">

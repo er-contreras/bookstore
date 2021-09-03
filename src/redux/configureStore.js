@@ -1,15 +1,20 @@
-import { createStore } from 'redux';
+import {
+  createStore, combineReducers, compose, applyMiddleware,
+} from 'redux';
+import thunk from 'redux-thunk';
+// import logger from 'redux-logger';
+import booksReducer from './books/books';
 
-const initialState = {
-  books: [
-    { id: 11, title: 'Butterflies', author: 'Jason' },
-    { id: 12, title: 'Doggies', author: 'Carmen' },
-    { id: 13, title: 'Steppenwolf', author: 'Claudio' },
-  ],
-};
+const rootReducer = combineReducers({
+  books: booksReducer,
+});
 
-const reducer = (state = initialState, action) => state; // eslint-disable-line
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(reducer);
-
-export default store;
+export default function generateStore() {
+  const store = createStore(
+    rootReducer,
+    composeEnhancers(applyMiddleware(thunk)),
+  );
+  return store;
+}
