@@ -7,7 +7,7 @@ const Books = () => {
   const dispatch = useDispatch();
 
   const books = useSelector((store) => store.books);
-  console.log(books[0].id);
+  // console.log(books[0].id);
 
   return (
     <div>
