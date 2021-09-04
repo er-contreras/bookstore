@@ -19,15 +19,49 @@ const Books = () => {
       {books.map((book) => (
         <ul className={styles.bookContainer} key={book[0]}>
           <>
-            <li>{book[1][0].title}</li>
-            <input
-              type="button"
-              name="remove"
-              value="Remove"
-              onClick={() => {
-                dispatch(removeBooksThunk(book[0]));
-              }}
-            />
+            <div id={styles.firstSection}>
+              <div className={styles.info}>
+                <li className={styles.category}>{book[1][0].category.toUpperCase()}</li>
+                <li>{book[1][0].title}</li>
+                <input
+                  type="button"
+                  name="author"
+                  value="Author"
+                />
+              </div>
+
+              <div className={styles.management}>
+                <input
+                  type="button"
+                  name="comments"
+                  value="Comments"
+                />
+                <input
+                  type="button"
+                  name="remove"
+                  value="Remove"
+                  onClick={() => {
+                    dispatch(removeBooksThunk(book[0]));
+                  }}
+                />
+                <input
+                  type="button"
+                  name="edit"
+                  value="Edit"
+                />
+              </div>
+            </div>
+            <div id={styles.progress}>
+              <div>Circle</div>
+              <li>64%</li>
+              <li>Completed</li>
+            </div>
+
+            <div id={styles.chapter}>
+              <li>CURRENT CHAPTER</li>
+              <li>Chapter</li>
+              <button type="button">UPDATE PROGRESS</button>
+            </div>
           </>
         </ul>
       ))}

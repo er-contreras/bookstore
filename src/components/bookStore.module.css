@@ -1,3 +1,9 @@
+#firstSection {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
 .bookContainer {
   width: 75rem;
   height: 10rem;
@@ -20,4 +26,22 @@
   line-height: normal;
   letter-spacing: normal;
   color: #4386bf;
+  border: none;
+  background: none;
+}
+
+.category {
+  font-size: 0.7rem;
+}
+
+#progress {
+  margin: 0 0 0 20rem;
+}
+
+#chapter {
+  margin: 0 0 0 8rem
+}
+
+#chapter li:first-child {
+  color: rgb(168, 168, 168);
 }
