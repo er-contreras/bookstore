@@ -1,8 +1,34 @@
-#firstSection {
+#firstSection,
+#progress,
+#circle,
+.percentage,
+#label {
   display: flex;
+}
+
+#firstSection {
   flex-direction: column;
   text-align: left;
   min-width: 15rem;
+}
+
+.info input {
+  text-align: left;
+}
+
+.bookContainer input {
+  width: 3.375rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  border: none;
+  background: none;
 }
 
 #firstSection input {
@@ -10,30 +36,11 @@
 }
 
 #progress {
-  display: flex;
   margin: 0 0 0 20rem;
-}
-
-#progress li:first-child {
-  width: 4.25rem;
-  height: 2.438rem;
-  margin: 0.063rem 5.75rem 0 0.688rem;
-  font-family: Montserrat;
-  font-size: 2rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal
-}
-
-#progress li:last-child {
-  color: #a9a9a9;
 }
 
 #circle,
 .percentage {
-  display: flex;
   flex-direction: column;
   justify-content: center;
 }
@@ -52,12 +59,12 @@
   margin: 0 0 0 8rem;
 }
 
-#chapter li {
-  margin: 0 0 0.5rem 0;
+.info li {
+  margin: 0;
 }
 
-#chapter li:first-child {
-  color: rgb(168, 168, 168);
+#chapter li {
+  margin: 0 0 0.5rem 0;
 }
 
 #chapter button {
@@ -73,16 +80,8 @@
   margin: 0 0 0.7rem 0;
 }
 
-.info li {
-  margin: 0;
-}
-
 .title {
   font-size: 1.3rem;
-}
-
-.info input {
-  text-align: left;
 }
 
 .bookContainer {
@@ -95,31 +94,13 @@
   background-color: #fff;
 }
 
-.bookContainer input {
-  width: 3.375rem;
-  height: 1.188rem;
-  margin: 0.188rem 0.938rem 0.125rem 0;
-  font-family: RobotoSlab;
-  font-size: 0.875rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #4386bf;
-  border: none;
-  background: none;
-}
-
 .category {
   font-size: 0.7rem;
 }
 
-
 .updateprogress {
   width: 8.938rem;
   height: 1.125rem;
-  font-family: RobotoSlab;
   font-size: 0.813rem;
   font-weight: 300;
   font-stretch: normal;
@@ -143,15 +124,10 @@
   margin: 0 0 1rem 0;
 }
 
-#label {
-  display: flex;
-}
-
 #label input {
   width: 41rem;
   margin: 0 4rem 0 0;
   border: 1px solid rgba(195, 195, 195, 0.675);
-  /* border: none; */
 }
 
 #label select {
@@ -167,5 +143,24 @@
   background-color: #0290ff;
   width: 11rem;
   color: white;
-  font-family: RobotoSlab;
+}
+
+#progress li:first-child {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+#progress li:last-child {
+  color: #a9a9a9;
+}
+
+#chapter li:first-child {
+  color: rgb(168, 168, 168);
 }
