@@ -34,7 +34,6 @@ const reducer = (state = initialData, action) => {
       ];
     case REMOVE_BOOK:
       // action.payload receive the id of the ul I have in the UI
-      console.log(state);
       return state.filter((book) => book[0] !== action.payload);
     default:
       return state;

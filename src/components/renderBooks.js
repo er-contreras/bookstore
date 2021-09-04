@@ -16,7 +16,6 @@ const Books = () => {
 
   return (
     <div>
-      {console.log(books)}
       {books.map((book) => (
         <ul key={book[0]}>
           <>
