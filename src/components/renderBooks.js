@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
-// import { addBook, removeBook } from '../redux/books/books'; // eslint-disable-line
+import styles from './bookStore.module.css';
 import { getBooksThunk, addBookThunk, removeBooksThunk } from './apiManager';
 
 const Books = () => {
@@ -17,7 +17,7 @@ const Books = () => {
   return (
     <div>
       {books.map((book) => (
-        <ul key={book[0]}>
+        <ul className={styles.bookContainer} key={book[0]}>
           <>
             <li>{book[1][0].title}</li>
             <input

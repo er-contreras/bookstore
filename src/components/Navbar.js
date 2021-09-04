@@ -35,6 +35,7 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      <div className={styles.user}>user</div>
     </nav>
   );
 };
