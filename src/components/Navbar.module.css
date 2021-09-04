@@ -26,9 +26,22 @@ ul li {
 
 .user {
   margin: 0 0 0 50%;
+  font-size: 1.5rem;
+  color: #0290ff;
 }
 
 a {
   color: rgb(168, 168, 168);
   text-decoration: none;
+}
+
+.hollow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 232, 232, 0.641);
+  background-color: rgba(0, 0, 0, 0);
 }
