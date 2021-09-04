@@ -52,9 +52,13 @@ const Books = () => {
               </div>
             </div>
             <div id={styles.progress}>
-              <div>Circle</div>
-              <li>64%</li>
-              <li>Completed</li>
+              <div id={styles.circle}>
+                <div className={styles.hollow} />
+              </div>
+              <div className={styles.percentage}>
+                <li>64%</li>
+                <li>Completed</li>
+              </div>
             </div>
 
             <div id={styles.chapter}>
@@ -65,38 +69,40 @@ const Books = () => {
           </>
         </ul>
       ))}
-      <h2>Books List</h2>
-      <form>
-        <label htmlFor="book">
-          ADD NEW BOOK
-          <input id="bookName" type="text" placeholder="Book Title" />
-          <select id="category">
-            <option value="">Category</option>
-            <option value="horror">Horror</option>
-            <option value="action">Action</option>
-            <option value="adventure">Adventure</option>
-            <option value="sci-fi">Sci-fi</option>
-            <option value="comedy">Comedy</option>
-            <option value="fantasy">Fantasy</option>
-          </select>
-          <input
-            type="submit"
-            name="book"
-            id="book"
-            value="Add Book"
-            onClick={() => {
-              const bookName = document.getElementById('bookName');
-              const category = document.getElementById('category');
-              const addPaper = {
-                item_id: uuidv4(),
-                title: bookName.value,
-                category: category.value,
-              };
-              dispatch(addBookThunk(addPaper));
-            }}
-          />
-        </label>
-      </form>
+      <div id={styles.addBook}>
+        <h2>ADD NEW BOOK</h2>
+        <form>
+          <label htmlFor="book">
+            <input id="bookName" type="text" placeholder="Book Title" />
+            <select id="category">
+              <option value="">Category</option>
+              <option value="horror">Horror</option>
+              <option value="action">Action</option>
+              <option value="adventure">Adventure</option>
+              <option value="sci-fi">Sci-fi</option>
+              <option value="comedy">Comedy</option>
+              <option value="fantasy">Fantasy</option>
+            </select>
+            <input
+              type="submit"
+              name="book"
+              id="book"
+              value="Add Book"
+              onClick={() => {
+                const bookName = document.getElementById('bookName');
+                const category = document.getElementById('category');
+                const addPaper = {
+                  item_id: uuidv4(),
+                  title: bookName.value,
+                  category: category.value,
+                };
+                dispatch(addBookThunk(addPaper));
+                window.location.reload();
+              }}
+            />
+          </label>
+        </form>
+      </div>
     </div>
   );
 };
