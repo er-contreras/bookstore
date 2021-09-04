@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
-import { addBook, removeBook } from '../redux/books/books';
+// import { addBook, removeBook } from '../redux/books/books'; // eslint-disable-line
+import { getBooksThunk, addBookThunk, removeBooksThunk } from './apiManager';
 
 const Books = () => {
+  // Used to change the state or data in the store
   const dispatch = useDispatch();
-
+  // Used to save the store in a variable
   const books = useSelector((store) => store.books);
   // console.log(books[0].id);
+  useEffect(() => {
+    dispatch(getBooksThunk());
+  }, []);
 
   return (
     <div>
-      {/* {console.log(books)} */}
       {books.map((book) => (
-        <ul key={book.id}>
+        <ul key={book[0]}>
           <>
-            {/* {console.log(book.id)} */}
-            <li>{book.title}</li>
+            <li>{book[1][0].title}</li>
             <input
               type="button"
               name="remove"
               value="Remove"
               onClick={() => {
-                dispatch(removeBook(book.id));
+                dispatch(removeBooksThunk(book[0]));
               }}
             />
           </>
@@ -49,11 +52,13 @@ const Books = () => {
             value="Add Book"
             onClick={() => {
               const bookName = document.getElementById('bookName');
+              const category = document.getElementById('category');
               const addPaper = {
-                id: uuidv4(),
+                item_id: uuidv4(),
                 title: bookName.value,
+                category: category.value,
               };
-              dispatch(addBook(addPaper));
+              dispatch(addBookThunk(addPaper));
             }}
           />
         </label>
