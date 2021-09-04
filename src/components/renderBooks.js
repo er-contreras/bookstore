@@ -1,7 +1,8 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
-import { addBook, removeBook } from '../redux/books/books'; // eslint-disable-line
+// import { addBook, removeBook } from '../redux/books/books'; // eslint-disable-line
+import { addBookThunk, removeBooksThunk } from '../redux/books/books';
 
 const Books = () => {
   // Used to change the state or data in the store
@@ -22,7 +23,7 @@ const Books = () => {
               name="remove"
               value="Remove"
               onClick={() => {
-                dispatch(removeBook(book.item_id));
+                dispatch(removeBooksThunk(book.item_id));
               }}
             />
           </>
@@ -55,7 +56,7 @@ const Books = () => {
                 title: bookName.value,
                 category: category.value,
               };
-              dispatch(addBook(addPaper));
+              dispatch(addBookThunk(addPaper));
             }}
           />
         </label>

@@ -43,7 +43,7 @@ const reducer = (state = initialData, action) => {
 };
 
 // GET, POST & DELETE --------API-------->
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GJJdZrOtr2wngou75KwH/';
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GJJdZrOtr2wngou75KwH';
 
 const getBooksAPI = async () => {
   const response = await fetch(`${url}/books`, {
@@ -89,7 +89,10 @@ export const addBookThunk = (newBook) => (dispatch) => {
     dispatch(
       addBook([
         newBook.item_id,
-        [{ category: newBook.category, title: newBook.title }],
+        [{
+          category: newBook.category,
+          title: newBook.title,
+        }],
       ]),
     );
   });
