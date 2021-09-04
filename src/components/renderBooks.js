@@ -22,7 +22,7 @@ const Books = () => {
             <div id={styles.firstSection}>
               <div className={styles.info}>
                 <li className={styles.category}>{book[1][0].category.toUpperCase()}</li>
-                <li>{book[1][0].title}</li>
+                <li className={styles.title}>{book[1][0].title}</li>
                 <input
                   type="button"
                   name="author"
@@ -60,7 +60,7 @@ const Books = () => {
             <div id={styles.chapter}>
               <li>CURRENT CHAPTER</li>
               <li>Chapter</li>
-              <button type="button">UPDATE PROGRESS</button>
+              <button className={styles.updateprogress} type="button">UPDATE PROGRESS</button>
             </div>
           </>
         </ul>

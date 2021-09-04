@@ -4,6 +4,46 @@
   text-align: left;
 }
 
+#progress {
+  margin: 0 0 0 20rem;
+}
+
+#chapter {
+  margin: 0 0 0 8rem;
+}
+
+#chapter li {
+  margin: 0 0 0.5rem 0;
+}
+
+#chapter li:first-child {
+  color: rgb(168, 168, 168);
+}
+
+#chapter button {
+  background-color: #0290ff;
+  width: 11.5rem;
+  height: 2.063rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+}
+
+.info {
+  margin: 0 0 0.7rem 0;
+}
+
+.info li {
+  margin: 0;
+}
+
+.title {
+  font-size: 1.3rem;
+}
+
+.info input {
+  text-align: left;
+}
+
 .bookContainer {
   width: 75rem;
   height: 10rem;
@@ -34,14 +74,17 @@
   font-size: 0.7rem;
 }
 
-#progress {
-  margin: 0 0 0 20rem;
-}
 
-#chapter {
-  margin: 0 0 0 8rem
-}
-
-#chapter li:first-child {
-  color: rgb(168, 168, 168);
+.updateprogress {
+  width: 8.938rem;
+  height: 1.125rem;
+  font-family: RobotoSlab;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
 }
