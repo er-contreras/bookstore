@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   text-align: left;
+  min-width: 15rem;
+}
+
+#firstSection input {
+  cursor: pointer;
 }
 
 #progress {
@@ -38,7 +43,7 @@
   height: 4.5rem;
   border-radius: 50%;
   border-style: solid;
-  border-color: #379cf6 #379cf6 #379cf6 rgb(185, 185, 185);
+  border-color: #379cf6 #379cf6 #379cf6 rgb(208, 208, 208);
   background-color: rgba(0, 0, 0, 0);
   transform: rotate(45deg);
 }
@@ -129,12 +134,38 @@
   width: 75rem;
   height: 10.625rem;
   margin: 2.313rem 6.25rem 0;
-  padding: 2rem 9.188rem 1.625rem 1.688rem;
-  border-radius: 4px;
+  padding: 2rem 0;
   border-top: solid 1px #e8e8e8;
 }
 
 #addBook h2 {
   color: #aeaeae;
   margin: 0 0 1rem 0;
+}
+
+#label {
+  display: flex;
+}
+
+#label input {
+  width: 41rem;
+  margin: 0 4rem 0 0;
+  border: 1px solid rgba(195, 195, 195, 0.675);
+  /* border: none; */
+}
+
+#label select {
+  width: 17rem;
+  color: rgb(207, 207, 207);
+  border: 1px solid rgba(195, 195, 195, 0.675);
+  padding: 0.3rem;
+  margin: 0 3rem 0 0;
+}
+
+#label button {
+  border: 1px solid rgba(195, 195, 195, 0.675);
+  background-color: #0290ff;
+  width: 11rem;
+  color: white;
+  font-family: RobotoSlab;
 }

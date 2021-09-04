@@ -72,22 +72,23 @@ const Books = () => {
       <div id={styles.addBook}>
         <h2>ADD NEW BOOK</h2>
         <form>
-          <label htmlFor="book">
+          <div id={styles.label} htmlFor="book">
             <input id="bookName" type="text" placeholder="Book Title" />
             <select id="category">
-              <option value="">Category</option>
-              <option value="horror">Horror</option>
-              <option value="action">Action</option>
-              <option value="adventure">Adventure</option>
-              <option value="sci-fi">Sci-fi</option>
-              <option value="comedy">Comedy</option>
-              <option value="fantasy">Fantasy</option>
+              <option value="Category">Category</option>
+              <option value="Horror">Horror</option>
+              <option value="Action">Action</option>
+              <option value="Adventure">Adventure</option>
+              <option value="Sci-fi">Sci-fi</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Fantasy">Fantasy</option>
             </select>
-            <input
+            <button
               type="submit"
               name="book"
               id="book"
               value="Add Book"
+              placeholder="Book title"
               onClick={() => {
                 const bookName = document.getElementById('bookName');
                 const category = document.getElementById('category');
@@ -99,8 +100,10 @@ const Books = () => {
                 dispatch(addBookThunk(addPaper));
                 window.location.reload();
               }}
-            />
-          </label>
+            >
+              Add Book
+            </button>
+          </div>
         </form>
       </div>
     </div>

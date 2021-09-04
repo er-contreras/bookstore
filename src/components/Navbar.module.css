@@ -1,6 +1,5 @@
 nav {
   display: flex;
-  /* text-align: center; */
   background-color: #fff;
   align-items: center;
   padding: 1.438rem 6.188rem 1.688rem 6.25rem;
@@ -27,4 +26,9 @@ ul li {
 
 .user {
   margin: 0 0 0 50%;
+}
+
+a {
+  color: rgb(168, 168, 168);
+  text-decoration: none;
 }
