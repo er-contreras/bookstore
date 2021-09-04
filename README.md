@@ -4,7 +4,7 @@
 
 > Build Bookstore with React and Redux.
 
-<!-- <div align="center"><img src="./calculator.png" width="300"/></div> -->
+<div align="center"><img src="./BookStore.png" width="400"/></div>
 
 Mobile ScreenShots
 

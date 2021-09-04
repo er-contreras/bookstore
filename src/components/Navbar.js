@@ -1,5 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -35,6 +37,11 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      <div className={styles.user}>
+        <div className={styles.hollow}>
+          <FontAwesomeIcon icon={faUser} />
+        </div>
+      </div>
     </nav>
   );
 };
