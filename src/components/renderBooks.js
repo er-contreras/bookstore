@@ -1,29 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 // import { addBook, removeBook } from '../redux/books/books'; // eslint-disable-line
-import { addBookThunk, removeBooksThunk } from '../redux/books/books';
+import { getBooksThunk, addBookThunk, removeBooksThunk } from './apiManager';
 
 const Books = () => {
   // Used to change the state or data in the store
   const dispatch = useDispatch();
-
   // Used to save the store in a variable
   const books = useSelector((store) => store.books);
   // console.log(books[0].id);
+  useEffect(() => {
+    dispatch(getBooksThunk());
+  }, []);
 
   return (
     <div>
+      {console.log(books)}
       {books.map((book) => (
-        <ul key={book.item_id}>
+        <ul key={book[0]}>
           <>
-            <li>{book.title}</li>
+            <li>{book[1][0].title}</li>
             <input
               type="button"
               name="remove"
               value="Remove"
               onClick={() => {
-                dispatch(removeBooksThunk(book.item_id));
+                dispatch(removeBooksThunk(book[0]));
               }}
             />
           </>
